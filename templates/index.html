@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+{%block title%}Home{%endblock%}
+
+{%block content%}
+<div class="container-fluid" id="available">
+    <h3 class="display-4 text-success">Available Pets</h3>
+    <div class="row d-flex flex-wrap   justify-content-center">
+        {%for pet in pets%}
+            {%if pet.available%}
+             <div class="col-md-4 text-center">
+                <img class="img-thumbnail img-fluid" src="{{pet.photo_url}}" width="350" height="250" alt="">
+                <p class="text-center"><a href="/{{pet.id}}">{{pet.name}}</a> is <b>Available</b></p>
+            </div>
+            {%endif%}
+        {%endfor%}
+    </div>
+    <br>
+    <div class="row justify-content-center">
+        <a href="/add" class="btn btn-primary">Add A Pet</a>
+    </div>
+</div>
+<hr>
+<div class="container-fluid" id="unavailable">
+    <h3 class="display-4 text-danger">Unavailable Pets</h3>
+    <div class="row d-flex flex-wrap   justify-content-center">
+    {%for pet in pets%}
+            {%if not pet.available%}
+             <div class="col-md-4 text-center">
+                <img class="img-thumbnail img-fluid" src="{{pet.photo_url}}" width="350" height="250" alt="">
+                <p class="text-center"><a href="/{{pet.id}}">{{pet.name}}</a> is no longer available</p>
+            </div>
+            {%endif%}
+        {%endfor%}
+</div>
+
+{%endblock%}

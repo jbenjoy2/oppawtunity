@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+{%block title%}Add Pet{%endblock%}
+
+{%block content%}
+<h1 class="display-2 text-primary text-center">Add a Pet</h1>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form method="POST">
+            {% include "ftemp.html" %}
+        </form>
+    </div>
+</div>
+
+{%endblock%}

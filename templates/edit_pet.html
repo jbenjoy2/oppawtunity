@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block title%}Add Pet{%endblock%}
+
+{%block content%}
+<h1 class="display-2 text-primary text-center">Edit Pet</h1>
+
+<div class="row justify-content-center">
+    <img class="img-fluid img-thumbnail" src="{{pet.photo_url}}" alt="">
+    <div class="col-md-8">
+        <form method="POST">
+            {% include "ftemp.html" %}
+        </form>
+    </div>
+</div>
+
+{%endblock%}
